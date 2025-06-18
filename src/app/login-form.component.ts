@@ -25,11 +25,11 @@ import { appConfig } from './app.config';
               Kullanıcı Adı
             </label>
             <div class="ant-form-item-control">
-              <input 
-                type="text" 
-                id="username" 
-                name="username" 
-                [(ngModel)]="username" 
+              <input
+                type="text"
+                id="username"
+                name="username"
+                [(ngModel)]="username"
                 required
                 class="ant-input"
                 placeholder="Kullanıcı adınızı girin"
@@ -42,11 +42,11 @@ import { appConfig } from './app.config';
               Şifre
             </label>
             <div class="ant-form-item-control">
-              <input 
-                type="password" 
-                id="password" 
-                name="password" 
-                [(ngModel)]="password" 
+              <input
+                type="password"
+                id="password"
+                name="password"
+                [(ngModel)]="password"
                 required
                 class="ant-input"
                 placeholder="Şifrenizi girin"
@@ -55,7 +55,7 @@ import { appConfig } from './app.config';
           </div>
           <div class="ant-form-item">
             <button type="submit" class="ant-btn ant-btn-primary ant-btn-block">
-              Giriş Yap
+              React Ana Uygulamasına Gönder
             </button>
           </div>
         </form>
@@ -95,8 +95,8 @@ import { appConfig } from './app.config';
 export class LoginFormComponent {
   private _currentTime: string = '';
   private _lastMessage: string = '';
-  
-  @Input() 
+
+  @Input()
   set currentTime(value: string) {
     this._currentTime = value;
     console.log('Angular: currentTime güncellendi:', value);
@@ -104,8 +104,8 @@ export class LoginFormComponent {
   get currentTime(): string {
     return this._currentTime;
   }
-  
-  @Input() 
+
+  @Input()
   set lastMessage(value: string) {
     this._lastMessage = value;
     console.log('Angular: lastMessage güncellendi:', value);
@@ -113,9 +113,9 @@ export class LoginFormComponent {
   get lastMessage(): string {
     return this._lastMessage;
   }
-  
+
   @Output() loginSubmit = new EventEmitter<{username: string, password: string}>();
-  
+
   username: string = '';
   password: string = '';
 
@@ -125,14 +125,14 @@ export class LoginFormComponent {
       username: this.username,
       password: this.password
     };
-    
+
     // Web component olarak kullanıldığında custom event dispatch et
     const event = new CustomEvent('loginSubmit', {
       detail: loginData,
       bubbles: true,
       composed: true
     });
-    
+
     // DOM'dan element'i bul ve event'i gönder
     const element = document.querySelector('angular-login-form');
     if (element) {
@@ -146,10 +146,10 @@ export class LoginFormComponent {
   if (typeof customElements !== 'undefined' && !customElements.get('angular-login-form')) {
     const app = await createApplication(appConfig);
     const loginElement = createCustomElement(LoginFormComponent, { injector: app.injector });
-    
+
     // Custom element olarak tanımla
     customElements.define('angular-login-form', loginElement);
-    
+
     // sendMessage metodunu ekle
     const proto = customElements.get('angular-login-form')!.prototype;
     proto.sendMessage = function(message: string) {
@@ -157,7 +157,7 @@ export class LoginFormComponent {
         this.lastMessage = message;
       }
     };
-    
+
     console.log('Angular Login Form component auto-registered!');
   }
 })();
