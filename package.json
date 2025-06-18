@@ -1,0 +1,60 @@
+{
+  "name": "@myorg/angular-login-component",
+  "version": "1.0.0",
+  "main": "dist-webpack/angular-login-component.js",
+  "files": [
+    "dist-webpack"
+  ],
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "start:mf": "webpack serve --config webpack.config.mf.js",
+    "build": "ng build",
+    "build:web-component": "ng build --configuration web-component",
+    "build:webpack": "webpack",
+    "build:mf": "webpack --config webpack.config.mf.js",
+    "build:mf:prod": "webpack --config webpack.config.prod.js",
+    "build:github": "webpack --config webpack.config.github.js",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/common": "^20.0.0",
+    "@angular/compiler": "^20.0.3",
+    "@angular/core": "^20.0.0",
+    "@angular/elements": "^19.2.14",
+    "@angular/forms": "^20.0.0",
+    "@angular/platform-browser": "^20.0.0",
+    "@angular/router": "^20.0.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.15.0"
+  },
+  "devDependencies": {
+    "@angular-architects/module-federation": "^20.0.0",
+    "@angular/build": "^20.0.2",
+    "@angular/cli": "^20.0.2",
+    "@angular/compiler-cli": "^20.0.0",
+    "@types/jasmine": "~5.1.0",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "css-loader": "^7.1.2",
+    "html-loader": "^5.1.0",
+    "jasmine-core": "~5.7.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "style-loader": "^4.0.0",
+    "ts-loader": "^9.5.2",
+    "typescript": "~5.8.2",
+    "webpack": "^5.99.9",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2",
+    "webpack-merge": "^6.0.1"
+  }
+}
